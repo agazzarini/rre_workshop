@@ -21,20 +21,20 @@ pipeline {
             }
         }
     }
-    post {
-        always {
-            junit '**/target/surefire-reports/*.xml'
-        	script {
-				wrap([$class: 'BuildUser']) {
-					def jobName = currentBuild.fullDisplayName
-					emailext body: '''${SCRIPT, template="groovy-html.template"}''',
-					mimeType: 'text/html',
-					subject: "[Jenkins] ${jobName}",
-					recipientProviders: [[$class: "DevelopersRecipientProvider"],
-                                         [$class: "RequesterRecipientProvider"],
-                                         [$class: "CulpritsRecipientProvider"]]
-				}
-			}
-        }
-    }
+//     post {
+//         always {
+//             junit '**/target/surefire-reports/*.xml'
+//         	script {
+// 				wrap([$class: 'BuildUser']) {
+// 					def jobName = currentBuild.fullDisplayName
+// 					emailext body: '''${SCRIPT, template="groovy-html.template"}''',
+// 					mimeType: 'text/html',
+// 					subject: "[Jenkins] ${jobName}",
+// 					recipientProviders: [[$class: "DevelopersRecipientProvider"],
+//                                          [$class: "RequesterRecipientProvider"],
+//                                          [$class: "CulpritsRecipientProvider"]]
+// 				}
+// 			}
+//         }
+//     }
 }

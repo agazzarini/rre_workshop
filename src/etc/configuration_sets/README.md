@@ -1,5 +1,5 @@
 This folder contains one subfolder for each configuration version. 
-Each version folder should be a Solr home, so it should contain
+Each version folder should be a Solr home,  so it should contain
 
 * a solr.xml (even empty)
 * one directory for each core containing a "conf" subfolder with all required files (e.g. schema.xml, solrconfig.xml)

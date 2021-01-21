@@ -4,9 +4,6 @@
 <!-- Minimal solrconfig.xml with /select, /admin and /update only -->
 
 <config>
-    <!-- Load the Querqy Jar that comes with all it's dependencies -->
-    <lib dir="/opt/querqy/lib/" />
-
     <dataDir>${solr.data.dir:}</dataDir>
 
     <directoryFactory name="DirectoryFactory"

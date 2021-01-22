@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<config xmlns:xi="http://www.w3.org/2001/XInclude">>
+    <dataDir>${solr.data.dir:}</dataDir>
+
+    <luceneMatchVersion>LATEST</luceneMatchVersion>
+
+    <updateHandler class="solr.DirectUpdateHandler2">
+        <commitWithin>
+            <softCommit>${solr.commitwithin.softcommit:true}</softCommit>
+        </commitWithin>
+
+    </updateHandler>
+
+    <requestDispatcher handleSelect="true" >
+        <requestParsers enableRemoteStreaming="false" multipartUploadLimitInKB="512000" />
+    </requestDispatcher>
+
+    <requestHandler name="v1.0" class="solr.SearchHandler" default="true">
+        <xi:include href="defaults.xml"/>
+        <arr name="last-components">
+            <str>ev1.0</str>
+        </arr>
+    </requestHandler>
+
+    <requestHandler name="v1.1" class="solr.SearchHandler" default="true">
+        <xi:include href="defaults.xml"/>
+        <arr name="last-components">
+            <str>ev1.1</str>
+        </arr>
+    </requestHandler>
+
+    <requestHandler name="v1.2" class="solr.SearchHandler" default="true">
+        <xi:include href="defaults.xml"/>
+        <arr name="last-components">
+            <str>ev1.2</str>
+        </arr>
+    </requestHandler>
+
+    <requestHandler name="v1.3" class="solr.SearchHandler" default="true">
+        <xi:include href="defaults.xml"/>
+        <arr name="last-components">
+            <str>ev1.3</str>
+        </arr>
+    </requestHandler>
+
+    <searchComponent name="ev1.0" class="solr.QueryElevationComponent" >
+        <str name="queryFieldType">text_stemmed_en</str>
+        <str name="config-file">elevate_v1.0.xml</str>
+    </searchComponent>
+
+    <searchComponent name="ev1.1" class="solr.QueryElevationComponent" >
+        <str name="queryFieldType">text_stemmed_en</str>
+        <str name="config-file">elevate_v1.1.xml</str>
+    </searchComponent>
+
+    <searchComponent name="ev1.2" class="solr.QueryElevationComponent" >
+        <str name="queryFieldType">text_stemmed_en</str>
+        <str name="config-file">elevate_v1.2.xml</str>
+    </searchComponent>
+
+    <searchComponent name="ev1.3" class="solr.QueryElevationComponent" >
+        <str name="queryFieldType">text_stemmed_en</str>
+        <str name="config-file">elevate_v1.3.xml</str>
+    </searchComponent>
+</config>

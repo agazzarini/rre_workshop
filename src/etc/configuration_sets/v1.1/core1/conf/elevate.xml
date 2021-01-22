@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<elevate>
-  <query text="foo bar">
-    <doc id="1768011" />
-
-    <doc id="16497" />
-    <doc id="3" />
-  </query>
-</elevate>

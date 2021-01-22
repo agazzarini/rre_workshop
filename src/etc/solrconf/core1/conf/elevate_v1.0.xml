@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<elevate>
+  <query text="notebook">
+    <!-- 1 -->
+    <doc id="1768011" />
+
+    <!-- KO -->
+    <doc id="2274095" />
+    <doc id="79184648" />
+    <doc id="79182014" />
+
+    <!-- 3 -->
+    <doc id="4143583" />
+    <doc id="1971322" />
+    <doc id="79041126" />
+
+    <!-- KO -->
+    <doc id="78280592"/>
+    <doc id="78280594"/>
+
+    <!-- 3 -->
+    <doc id="79447978" />
+    <doc id="77220972" />
+  </query>
+</elevate>

@@ -21,24 +21,20 @@
         <plugins>
             <plugin>
                 <groupId>io.sease</groupId>
-                <artifactId>rre-maven-solr-plugin</artifactId>
-                <version>7.7.2</version>
+                <artifactId>rre-maven-external-solr-plugin</artifactId>
+                <version>8.3.0</version>
                 <!-- the configuration below is provided just for example, as it perfectly matches default values -->
                 <configuration>
                     <configurations-folder>src/etc/configuration_sets</configurations-folder>
-                    <corpora-folder>src/etc/corpora</corpora-folder>
                     <ratings-folder>src/etc/ratings</ratings-folder>
                     <templates-folder>src/etc/templates</templates-folder>
                     <fields>id,name</fields>
                     <metrics>
-                        <param>io.sease.rre.core.domain.metrics.impl.Precision</param>
-<!--                        <param>io.sease.rre.core.domain.metrics.impl.Recall</param>-->
-<!--                        <param>io.sease.rre.core.domain.metrics.impl.ReciprocalRank</param>-->
-<!--                        <param>io.sease.rre.core.domain.metrics.impl.AveragePrecision</param>-->
+                        <param>io.sease.rre.core.domain.metrics.impl.PrecisionAtTen</param>
                         <param>io.sease.rre.core.domain.metrics.impl.NDCGAtTen</param>
                     </metrics>
                     <evaluation>
-                        <runAsync>true</runAsync>
+                        <runAsync>false</runAsync>
                         <runQueriesAsync>false</runQueriesAsync>
                         <threadpoolSize>4</threadpoolSize>
                     </evaluation>
@@ -56,7 +52,7 @@
             <plugin>
                 <groupId>io.sease</groupId>
                 <artifactId>rre-maven-report-plugin</artifactId>
-                <version>1.0</version>
+                <version>1.2-SNAPSHOT</version>
                 <configuration>
                     <formats>
 <!--                        <param>spreadsheet</param>-->
